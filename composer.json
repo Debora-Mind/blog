@@ -2,11 +2,6 @@
     "name": "debora-mind/blog",
     "description": "Blog de estudos modificado conforme as aulas da Alura.",
     "type": "project",
-    "require-dev": {
-        "phan/phan": "v5.x-dev",
-        "squizlabs/php_codesniffer": "4.0.x-dev",
-        "phpunit/phpunit": "10.0.x-dev"
-    },
     "license": "Apache-2.0",
     "autoload": {
         "psr-4": {
@@ -19,5 +14,19 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phan/phan": "v5.x-dev",
+        "squizlabs/php_codesniffer": "4.0.x-dev",
+        "phpunit/phpunit": "10.0.x-dev"
+    },
+    "scripts": {
+        "cs": "phpcs --standard=PSR12 --colors src/",
+        "cb": "phpcbf --standard=PSR12 --colors src/",
+        "phan": "phan --allow-polyfill-parser --color",
+        "check": [
+            "@phan",
+            "@cs"
+        ]
+    }
 }

@@ -1,2 +1,5 @@
 # blog
- Blog de estudos modificado conforme as aulas da Alura.
+
+---
+
+Blog de estudos modificado conforme as aulas da Alura.
