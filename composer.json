@@ -14,7 +14,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+      "ext-mysqli": "*"
+    },
     "require-dev": {
         "phan/phan": "v5.x-dev",
         "squizlabs/php_codesniffer": "4.0.x-dev",
