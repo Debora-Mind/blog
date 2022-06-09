@@ -1,10 +1,12 @@
 <?php
 
-require_once "Artigos.php";
-require_once "config.php";
+use DeboraMind\Blog\Artigo;
 
-$artigo = new Artigos();
-$artigos = $artigo->exibeTodos();
+require_once 'src/config.php';
+require_once 'src/Artigo.php';
+
+$artigo = new Artigo($mysql);
+$artigos = $artigo->exibirTodos();
 
 ?>
 
@@ -23,12 +25,12 @@ $artigos = $artigo->exibeTodos();
 
         <?php foreach ($artigos as $artigo) : ?>
         <h2>
-            <a href="<?php echo $artigo["link"] ?>">
-                <?php echo $artigo["titulo"] ?>
+            <a href="artigo.php?id=<?php echo $artigo['id'];?>">
+                <?php echo $artigo["titulo"]; ?>
             </a>
         </h2>
         <p>
-            <?php echo $artigo["conteudo"] ?>
+            <?php echo $artigo["conteudo"]; ?>
         </p>
         <?php endforeach; ?>
 

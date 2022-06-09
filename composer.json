@@ -1,11 +1,15 @@
 {
-    "name": "debora-mind/blog",
+    "name": "deboramind/blog",
     "description": "Blog de estudos modificado conforme as aulas da Alura.",
     "type": "project",
     "license": "Apache-2.0",
     "autoload": {
+        "files": [
+            "./vendor/autoload.php"
+        ],
         "psr-4": {
-            "DeboraMind\\Blog\\": "src/"
+            "DeboraMind\\Blog\\": "src/",
+            "DeboraMind\\": "./"
         }
     },
     "authors": [
@@ -15,6 +19,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "ext-mysqlnd": "^0.0.0",
       "ext-mysqli": "*"
     },
     "require-dev": {
@@ -30,5 +35,9 @@
             "@phan",
             "@cs"
         ]
-    }
+    },
+    "classmap": [
+        "src/Artigo.php",
+        "src/config.php"
+    ]
 }
