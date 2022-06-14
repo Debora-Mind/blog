@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,7 +14,7 @@
 <body>
     <div id="container">
         <h1>Você realmente deseja excluir o artigo?</h1>
-        <form method="post" action="excluir-artigo.html">
+        <form method="post" action="excluir-artigo.php">
             <p>
                 <input type="hidden" name="id" value="" />
                 <button class="botao">Excluir</button>

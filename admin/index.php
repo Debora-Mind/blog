@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,26 +18,26 @@
             <div id="artigo-admin">
                 <p>Primeiros passos com Spring</p>
                 <nav>
-                    <a class="botao" href="admin/editar-artigo.html">Editar</a>
-                    <a class="botao" href="admin/excluir-artigo.html">Excluir</a>
+                    <a class="botao" href="editar-artigo.php">Editar</a>
+                    <a class="botao" href="excluir-artigo.php">Excluir</a>
                 </nav>
             </div>
             <div id="artigo-admin">
                 <p>O que é Metodologia Ágil?</p>
                 <nav>
-                    <a class="botao" href="admin/editar-artigo.html">Editar</a>
-                    <a class="botao" href="admin/excluir-artigo.html">Excluir</a>
+                    <a class="botao" href="editar-artigo.php">Editar</a>
+                    <a class="botao" href="excluir-artigo.php">Excluir</a>
                 </nav>
             </div>
             <div id="artigo-admin">
                 <p>Como é o funil do Growth Hacking?</p>
                 <nav>
-                    <a class="botao" href="admin/editar-artigo.html">Editar</a>
-                    <a class="botao" href="admin/excluir-artigo.html">Excluir</a>
+                    <a class="botao" href="editar-artigo.php">Editar</a>
+                    <a class="botao" href="excluir-artigo.php">Excluir</a>
                 </nav>
             </div>
         </div>
-        <a class="botao botao-block" href="admin/adicionar-artigo.html">Adicionar Artigo</a>
+        <a class="botao botao-block" href="adicionar-artigo.php">Adicionar Artigo</a>
     </div>
 </body>
 

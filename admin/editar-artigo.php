@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,7 +14,7 @@
 <body>
     <div id="container">
         <h1>Editar Artigo</h1>
-        <form action="editar-artigo.html" method="post">
+        <form action="editar-artigo.php" method="post">
             <p>
                 <label for="titulo">Digite o novo título do artigo</label>
                 <input class="campo-form" type="text" name="titulo" id="titulo" value="" />
