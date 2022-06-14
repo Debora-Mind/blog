@@ -22,7 +22,7 @@ class Artigo
 
     public function encontrarPorId(string $id): array
     {
-        $selecionaArtigo = $this->mysql->prepare("SELECT id, titulo, conteudo FROM artigos WHERE id = ?");
+        $selecionaArtigo = $this->mysql->prepare('SELECT id, titulo, conteudo FROM artigos WHERE id = ?');
         $selecionaArtigo->bind_param('s', $id);
         $selecionaArtigo->execute();
         return $selecionaArtigo->get_result()->fetch_assoc();
@@ -33,5 +33,12 @@ class Artigo
         $insereArtigo = $this->mysql->prepare('INSERT INTO artigos(titulo, conteudo) VALUES (?, ?);');
         $insereArtigo->bind_param('ss', $titulo, $conteudo);
         $insereArtigo->execute();
+    }
+
+    public function excluir($id): void
+    {
+        $excluiArtigo = $this->mysql->prepare('DELETE FROM artigos WHERE id = ?');
+        $excluiArtigo->bind_param('s', $id);
+        $excluiArtigo->execute();
     }
 }

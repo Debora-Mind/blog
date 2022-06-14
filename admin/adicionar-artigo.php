@@ -2,6 +2,7 @@
 
 require_once '../src/config.php';
 require_once '../src/Artigo.php';
+require_once '../src/redireciona.php';
 
 use DeboraMind\Blog\Artigo;
 
@@ -9,9 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $artigo = new Artigo($mysql);
     $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
 
-    //redirecionar
-    header('Location: adicionar-artigo.php');
-    die();
+    redireciona('/blog/admin/index.php');
 }
 
 ?>

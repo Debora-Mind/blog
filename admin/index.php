@@ -1,5 +1,13 @@
 <?php
 
+use DeboraMind\Blog\Artigo;
+
+require '../src/config.php';
+require '../src/Artigo.php';
+
+$artigo = new Artigo($mysql);
+$artigos = $artigo->exibirTodos();
+
 ?>
 
 <!DOCTYPE html>
@@ -15,28 +23,17 @@
     <div id="container">
         <h1>Página Administrativa</h1>
         <div>
-            <div id="artigo-admin">
-                <p>Primeiros passos com Spring</p>
+            <?php foreach ($artigos as $artigo) : ?>
+            <div id="<?php echo $artigo['id']; ?>">
+                <p><?php echo $artigo['titulo']; ?></p>
                 <nav>
-                    <a class="botao" href="editar-artigo.php">Editar</a>
-                    <a class="botao" href="excluir-artigo.php">Excluir</a>
+                    <a class="botao" href="editar-artigo.php?id=<?php echo $artigo['id']; ?>">Editar</a>
+                    <a class="botao" href="excluir-artigo.php?id=<?php echo $artigo['id']; ?>">Excluir</a>
                 </nav>
             </div>
-            <div id="artigo-admin">
-                <p>O que é Metodologia Ágil?</p>
-                <nav>
-                    <a class="botao" href="editar-artigo.php">Editar</a>
-                    <a class="botao" href="excluir-artigo.php">Excluir</a>
-                </nav>
-            </div>
-            <div id="artigo-admin">
-                <p>Como é o funil do Growth Hacking?</p>
-                <nav>
-                    <a class="botao" href="editar-artigo.php">Editar</a>
-                    <a class="botao" href="excluir-artigo.php">Excluir</a>
-                </nav>
-            </div>
+            <?php endforeach; ?>
         </div>
+        <br>
         <a class="botao botao-block" href="adicionar-artigo.php">Adicionar Artigo</a>
     </div>
 </body>
