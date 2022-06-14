@@ -41,4 +41,11 @@ class Artigo
         $excluiArtigo->bind_param('s', $id);
         $excluiArtigo->execute();
     }
+
+    public function editar($id, $titulo, $conteudo): void
+    {
+        $editarArtigo = $this->mysql->prepare('UPDATE artigos SET titulo = ?, conteudo = ? WHERE id = ?');
+        $editarArtigo->bind_param('sss', $titulo, $conteudo, $id);
+        $editarArtigo->execute();
+    }
 }
